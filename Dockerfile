@@ -10,4 +10,7 @@ RUN yarn build
 FROM node:14.16.0-alpine3.13 as prod
 COPY --from=builder /raw/ /
 
+#https://github.com/yarnpkg/yarn/issues/4890
+RUN rm -rf /yarn.lock
+
 CMD [ "yarn", "start"]
