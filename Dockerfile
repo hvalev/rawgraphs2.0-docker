@@ -5,6 +5,7 @@ RUN apk update && apk add --no-cache git && \
 
 WORKDIR /raw
 #https://github.com/yarnpkg/yarn/issues/4890
+RUN yarn config set registry "http://registry.npmjs.org"
 RUN yarn --network-timeout 1000000 install
 RUN yarn build
 
