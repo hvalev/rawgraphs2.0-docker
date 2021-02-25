@@ -5,7 +5,7 @@ RUN apk update && apk add --no-cache git && \
 
 WORKDIR /raw
 #https://github.com/yarnpkg/yarn/issues/4890
-RUN yarn install --network-timeout 100000
+RUN yarn --network-timeout 1000000 install
 RUN yarn build
 
 FROM node:14.16.0-alpine3.13 as prod
