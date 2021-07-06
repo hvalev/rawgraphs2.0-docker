@@ -1,6 +1,6 @@
 # Rawgraphs 2.0 in a docker container
 [![build](https://github.com/hvalev/rawgraphs2.0-docker/actions/workflows/build.yml/badge.svg)](https://github.com/hvalev/rawgraphs2.0-docker/actions/workflows/build.yml)
-![Rawgraphs2.0 version](https://img.shields.io/badge/version-2.0.0--beta.9-brightgreen)
+![Rawgraphs2.0 version](https://img.shields.io/badge/version-2.0.0-beta.10-brightgreen)
 ![Docker Pulls](https://img.shields.io/docker/pulls/hvalev/rawgraphs2.0)
 ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/hvalev/rawgraphs2.0)
 
