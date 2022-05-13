@@ -6,7 +6,8 @@ RUN apk update && apk add --no-cache git python2 make g++ && \
 WORKDIR /raw
 #https://github.com/yarnpkg/yarn/issues/4890
 RUN yarn config set registry "http://registry.npmjs.org"
-RUN yarn --network-timeout 1000000 install
+#RUN yarn --network-timeout 1000000 install
+RUN yarn install
 RUN yarn build
 
 FROM node:15.14.0-alpine3.13 as prod
