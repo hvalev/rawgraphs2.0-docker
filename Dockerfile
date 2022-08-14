@@ -1,7 +1,7 @@
-FROM node:14.20.0-alpine3.16 as builder
+FROM node:14.20.0-buster-slim as builder
 
 RUN apk update && apk add --no-cache git python2 make g++ && \
-    git clone --depth 1 https://github.com/rawgraphs/rawgraphs-app.git /raw
+    git clone https://github.com/rawgraphs/rawgraphs-app.git /raw
 
 WORKDIR /raw
 #https://github.com/yarnpkg/yarn/issues/4890
@@ -10,7 +10,7 @@ RUN yarn config set registry "http://registry.npmjs.org"
 RUN yarn install
 RUN yarn build
 
-FROM node:14.20.0-alpine3.16 as prod
+FROM node:14.20.0-buster-slim as prod
 COPY --from=builder /raw/ /
 
 CMD [ "yarn", "start"]
