@@ -1,6 +1,6 @@
 FROM node:14.20.0-buster-slim as builder
 
-RUN apk update && apk add --no-cache git python2 make g++ && \
+RUN apt-get update && apt-get install git python2 make g++ && \
     git clone https://github.com/rawgraphs/rawgraphs-app.git /raw
 
 WORKDIR /raw
