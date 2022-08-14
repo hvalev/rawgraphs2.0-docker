@@ -6,8 +6,8 @@ RUN apt-get update && apt-get install git python2 make g++ -y && \
 WORKDIR /raw
 #https://github.com/yarnpkg/yarn/issues/4890
 RUN yarn config set registry "http://registry.npmjs.org"
-#RUN yarn --network-timeout 1000000 install
-RUN yarn install
+RUN yarn --network-timeout 1000000 install
+#RUN yarn install
 RUN yarn build
 
 FROM node:14.20.0-buster-slim as prod
