@@ -14,7 +14,7 @@ RUN git clone --depth 1 --branch ${RG_VERSION} https://github.com/rawgraphs/rawg
 WORKDIR /raw
 #https://github.com/yarnpkg/yarn/issues/4890
 RUN yarn config set registry "http://registry.npmjs.org"
-RUN npx browserslist@latest --update-db
+RUN npx update-browserslist-db@latest
 RUN yarn --verbose --network-timeout 1000000 install
 RUN yarn --verbose build
 
