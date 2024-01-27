@@ -1,4 +1,4 @@
-FROM node:16.20.2-buster-slim as builder
+FROM node:20.11.0-buster-slim as builder
 
 ENV RG_VERSION=v2.0.1
 
@@ -18,7 +18,7 @@ RUN yarn config set registry "http://registry.npmjs.org"
 RUN yarn --verbose --network-timeout 1000000 install
 RUN yarn build
 
-FROM node:16.20.2-buster-slim as prod
+FROM node:20.11.0-buster-slim as prod
 COPY --from=builder /raw/ /
 
 CMD [ "yarn", "start", "--host 0.0.0.0"]
