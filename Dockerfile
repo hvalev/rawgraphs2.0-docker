@@ -1,4 +1,4 @@
-FROM node:16.20.0-buster-slim as builder
+FROM node:16.20.2-buster-slim as builder
 
 ENV RG_VERSION=v2.0.1
 
@@ -19,7 +19,7 @@ RUN yarn --verbose --network-timeout 1000000 install
 #RUN yarn install
 RUN yarn build
 
-FROM node:16.20.0-buster-slim as prod
+FROM node:16.20.2-buster-slim as prod
 COPY --from=builder /raw/ /
 
 CMD [ "yarn", "start", "--host 0.0.0.0"]
