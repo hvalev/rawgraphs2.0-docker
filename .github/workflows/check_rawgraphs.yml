@@ -3,6 +3,7 @@ name: Check RawGraphs2 Version
 on: 
   schedule:
     - cron:  '0 4 * * 6'
+  workflow_dispatch:
 
 jobs:
   updateRawGraphs:
