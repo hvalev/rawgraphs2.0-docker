@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install libs
-        run: sudo apt-get update && sudo apt-get install curl jq -y
+        run: sudo apt-get update && sudo apt-get install git curl jq -y
       - name: Get Latest RawGraphs2.0 Release
         id: rawgraphs-version
         run: |
