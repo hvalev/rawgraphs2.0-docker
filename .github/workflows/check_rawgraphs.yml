@@ -9,7 +9,7 @@ jobs:
   updateRawGraphs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install libs
         run: sudo apt-get update && sudo apt-get install git curl jq -y
       - name: Get Latest RawGraphs2.0 Release
